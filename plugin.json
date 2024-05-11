@@ -1,0 +1,191 @@
+{
+    "name": "Telegram Comments",
+    "description": "The Telegram plugin lets site owners easily add support to let Telegram users comment on the website.",
+    "license": "GPL-3.0",
+    "author": "PatrickTobias",
+    "version": "1.0.1",
+    "scope": "site",
+    "minimumPubliiVersion": "0.39.0",
+    "usePluginSettingsView": false,
+    "messageInOptions": {
+        "type": "alert",
+        "text": "Comments are disabled by default. If you want to allow comments on your posts, make sure the 'Comments' option is enabled in the Post Options section of the Theme settings or, for individual posts, in edit mode via the 'Other Options' section."
+    },
+    "config": [
+        {
+            "name": "siteId",
+            "label": "Site ID",
+            "note": "The site ID is generated when you add your domain in the initial setup on  <a href='https://comments.app' target='_blank' rel='nofollow noopener noreferrer'>comments.app</a>.",
+            "group": "Comments configuration",
+            "value": "",
+            "type": "text"
+        },
+        {
+            "name": "limit",
+            "label": "Comments per page",
+            "group": "Comments configuration",
+            "note": "How many comments to display per page.",
+            "value": "5",
+            "type": "number"
+        },
+	{
+	    "name": "color",
+	    "label": "Accent color",
+ 	    "group": "Comments configuration",
+            "note": "Accent colors for links, name and icons",
+	    "value": "#3FA3EC",
+ 	    "type": "colorpicker",
+ 	    "outputFormat": "HEX"
+	},
+	{
+    	    "name": "colorful",
+    	    "label": "Use different colors for names",
+    	    "group": "Comments configuration",
+    	    "note": "Slightly different colors for the users",
+    	    "value": false,
+    	    "type": "checkbox"
+	},
+	{
+    	    "name": "dark",
+    	    "label": "Dark theme",
+    	    "group": "Comments configuration",
+    	    "note": "",
+    	    "value": false,
+    	    "type": "checkbox"
+	},
+	{
+    	    "name": "dislikes",
+    	    "label": "Display dislikes",
+    	    "group": "Comments configuration",
+    	    "note": "All likes will be shown, this setting also show dislikes",
+    	    "value": false,
+    	    "type": "checkbox"
+	},
+	{
+    	    "name": "outlined",
+    	    "label": "Outlined icons",
+    	    "group": "Comments configuration",
+    	    "note": "Show icons as outlined instead of filled",
+    	    "value": false,
+    	    "type": "checkbox"
+	},
+        {
+            "name": "textHeader",
+            "label": "Header title",
+            "group": "Theme integration",
+            "note":  "Customize the standard ‘Comments’ text displayed above the comment form",
+            "value": "Comments",
+            "type": "text"
+        },
+        {
+            "name": "headingLevel",
+            "label": "Heading level",
+            "group": "Theme integration",
+            "note":  "Set the heading level for the Header title",
+            "type": "radio",
+            "value": "2",
+            "options": [
+                {
+                    "label": "H2",
+                    "value": "2"
+                },
+                {
+                    "label": "H3",
+                    "value": "3"
+                },
+                {
+                    "label": "H4",
+                    "value": "4"
+                },
+                {
+                    "label": "H5",
+                    "value": "5"
+                },
+                {
+                    "label": "H6",
+                    "value": "6"
+                }
+            ]
+        },
+        {
+            "name": "textFallback",
+            "label": "Fallback message",
+            "group": "Theme integration",
+            "note":  "Customize the fallback message to be displayed to users that have disabled scripts in their browser or have a browser that doesn't support scripts.",
+            "rows": 3,
+            "type": "textarea",
+            "value": "Please enable JS to use the comments form."
+        },
+        {
+            "name": "cssWrapperClass",
+            "label": "Comments wrapper",
+            "group": "Theme integration",
+            "note":  "Customize a CSS class for the comments wrapper",
+            "value": "comments",
+            "type": "text"
+        },
+        {
+            "name": "cssInnerWrapperClass",
+            "label": "Comments inner wrapper",
+            "group": "Theme integration",
+            "note":  "Customize a CSS class for the inner comments wrapper",
+            "value": "comments-wrapper",
+            "type": "text"
+        },
+        {
+            "name": "cssHeaderClass",
+            "label": "Comments heading",
+            "group": "Theme integration",
+            "note":  "Add an additional CSS class for the heading element",
+            "placeholder": "small",
+            "value": "",
+            "type": "text"
+        },
+        {
+            "name": "lazyload",
+            "label": "Lazy load",
+            "note": "Enable this option if you want to preload Telegram scripts when users scroll down the page to the comments area.",
+            "group": "Advanced options",
+            "type": "checkbox",
+            "value": true
+        },
+        {
+            "name": "cookieBannerIntegration",
+            "label": "",
+            "note": "Enabling this option will integrate this plugin with Publii's native Cookie Banner, allowing visitors to consent to cookies installed by Telegram. This option is recommended if you want to ensure compliance with privacy regulations.",
+            "group": "Cookie Banner integration",
+            "type": "checkbox",
+            "value": false
+        },
+        {
+            "name": "cookieBannerGroup",
+            "label": "Cookie Group ID",
+            "note": "Please specify which Cookie Group ID of the Cookie Banner you wish to associate with the Telegram script. If it does not exists, add a new Cookie Group Name with the Cookie Group ID specified above in the Privacy Settings section of the Site Settings. For more details please visit our  <a href='https://getpublii.com/docs/gdpr-cookie-banner-configuration.html#cookie-groups' target='_blank' rel='nofollow noopener noreferrer'> documentation.</a>",
+            "group": "Cookie Banner integration",
+            "placeholder": "comments",
+            "type": "text",
+            "value": "",
+            "dependencies": [
+                {
+                    "field": "cookieBannerIntegration",
+                    "value": true
+                }
+            ]
+        },
+        {
+            "name": "cookieBannerNoConsentText",
+            "label": "Fallback message",
+            "note": "Customize the message that appears when the user has not consented to use Telegram scripts.",
+            "group": "Cookie Banner integration",
+            "rows": 3,
+            "type": "textarea",
+            "value": "Comments are disabled because you have not consented to their use. You can change your cookie preferences through our 'cookie banner'.",
+            "dependencies": [
+                {
+                    "field": "cookieBannerIntegration",
+                    "value": true
+                }
+            ]
+        }
+    ]
+}
