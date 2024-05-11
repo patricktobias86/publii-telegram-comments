@@ -3,7 +3,7 @@
     "description": "The Telegram plugin lets site owners easily add support to let Telegram users comment on the website.",
     "license": "GPL-3.0",
     "author": "patricktobias86",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "scope": "site",
     "minimumPubliiVersion": "0.39.0",
     "usePluginSettingsView": false,
@@ -140,14 +140,6 @@
             "placeholder": "small",
             "value": "",
             "type": "text"
-        },
-        {
-            "name": "lazyload",
-            "label": "Lazy load",
-            "note": "Enable this option if you want to preload Telegram scripts when users scroll down the page to the comments area.",
-            "group": "Advanced options",
-            "type": "checkbox",
-            "value": true
         },
         {
             "name": "cookieBannerIntegration",

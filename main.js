@@ -67,57 +67,6 @@ class TelegramCommentsPlugin {
 			        data-dark="${darkNumber}"></script>
 		`;
 
-		if (this.config.lazyload) {
-			scriptToLoad = `
-				var comments_element_to_check = document.getElementById('comments_thread');
-
-				if ('IntersectionObserver' in window) {
-					var iObserver = new IntersectionObserver(
-						(entries, observer) => {
-							entries.forEach(entry => {
-								if (entry.intersectionRatio >= 0.1) {
-									(function () {
-										var d = document, s = d.createElement('script');
-										s.src = '//comments.app/js/widget.js?3';
-										s.async = true;
-										s.setAttribute('data-comments-app-website', '${this.config.siteId}');
-										s.setAttribute('data-limit', '${this.config.limit}');
-										s.setAttribute('data-page-id', '${uniquePageID}');
-										s.setAttribute('data-color', '${this.config.color}');
-										s.setAttribute('data-dislikes', '${dislikesNumber}');
-										s.setAttribute('data-outlined', '${outlinedNumber}');
-										s.setAttribute('data-colorful', '${colorfulNumber}');
-										s.setAttribute('data-dark', '${darkNumber}');
-										(d.head || d.body).appendChild(s);
-									})();
-									observer.unobserve(entry.target);
-								}
-							});
-						},
-						{
-							threshold: [0, 0.2, 0.5, 1]
-						}
-					);
-
-					iObserver.observe(comments_element_to_check);
-				} else {
-					(function () {
-						var d = document, s = d.createElement('script');
-						s.src = '//comments.app/js/widget.js?3';
-						s.async = true;
-						s.setAttribute('data-comments-app-website', '${this.config.siteId}');
-						s.setAttribute('data-limit', '${this.config.commentsView}');
-						s.setAttribute('data-page-id', '${uniquePageID}');
-						s.setAttribute('data-dislikes', '${dislikesNumber}');
-						s.setAttribute('data-outlined', '${outlinedNumber}');
-						s.setAttribute('data-colorful', '${colorfulNumber}');
-						s.setAttribute('data-dark', '${darkNumber}');
-						(d.head || d.body).appendChild(s);
-					})();
-				}
-			`;
-		}
-
 		if (this.config.cookieBannerIntegration) {
 			cookieBannerGroup = 'gdpr-blocker/' + this.config.cookieBannerGroup.trim();
 			consentScriptToLoad = `document.body.addEventListener('publii-cookie-banner-unblock-${this.config.cookieBannerGroup.trim()}', function () {
