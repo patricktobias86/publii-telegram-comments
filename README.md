@@ -1,6 +1,8 @@
 # Publii Telegram Comments
  "Telegram Comments" is a plugin for Publii, a static site generator, that give you a embeded comment plugin that have support for Telegram users.
 
+![image](https://github.com/patricktobias86/publii-telegram-comments/assets/21059973/29ba7e4a-b0b3-4d34-8bf8-eaeb9c8c82c3)
+
 # Installation
 To install the "Telegram Comments" plugin:
 1. Download the latest release of the plugin from the Releases page.
