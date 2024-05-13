@@ -10,7 +10,9 @@ To install the "Telegram Comments" plugin:
 3. Activate the plugin and configure the plugin.
 
 # Usage
-Your domain need to be whitelisted by creating a new site id on comments.app, it's free and the setup is easy. Use the site id to setup the plugin.
+Your domain need to be whitelisted by creating a new site id on [comments.app](https://comments.app), it's free and the setup is easy. Use the site id to setup the plugin.
+
+This integration don't require any Telegram channel or group to be connected to the website. Every ID on your website wiil have a unque comment thread.
 
 If you encounter any issues or have any questions, please feel free to open an issue in this repository.
 
